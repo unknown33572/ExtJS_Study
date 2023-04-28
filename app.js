@@ -1,3 +1,4 @@
+/*
 Ext.onReady(function() {
     Ext.Msg.alert('Hello', 'World!');
     Ext.create("Ext.panel.Panel", {
@@ -55,6 +56,37 @@ Ext.onReady(function() {
             border : true,
             region : 'south',
             title : '패널4',
+        }]
+    });
+});
+*/
+
+
+Ext.onReady(function() {
+    Ext.create("Ext.container.Viewport", {
+        layout : 'fit',
+        border : true,
+        items : [{
+            xtype : 'panel',
+            title : '상위패널',
+            layout : 'card',
+            items : [{
+                xtype : 'panel',
+                title : '첫 번째 하위패널',
+                width : 300,
+                height : 300,
+                x : 300,
+                y : 600,
+                border : true,
+            }, {
+                    xtype : 'panel',
+                    width : 300,
+                    height : 300,
+                    x : 150,
+                    y : 300,
+                    border : true,
+                    title : '두 번째 하위패널',
+            }]
         }]
     });
 });
