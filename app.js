@@ -62,30 +62,66 @@ Ext.onReady(function() {
 */
 
 
+// Ext.onReady(function() {
+//     Ext.create("Ext.container.Viewport", {
+//         layout : 'fit',
+//         border : true,
+//         items : [{
+//             xtype : 'panel',
+//             title : '상위패널',
+//             layout : 'absolute',
+//             items : [{
+//                 xtype : 'panel',
+//                 title : '첫 번째 하위패널',
+//                 width : 300,
+//                 height : 300,
+//                 x : 300,
+//                 y : 600,
+//                 border : true,
+//             }, {
+//                     xtype : 'panel',
+//                     width : 300,
+//                     height : 300,
+//                     x : 150,
+//                     y : 300,
+//                     border : true,
+//                     title : '두 번째 하위패널',
+//             }]
+//         }]
+//     });
+// });
+
+
 Ext.onReady(function() {
-    Ext.create("Ext.container.Viewport", {
-        layout : 'fit',
-        border : true,
+    Ext.create("Ext.panel.Panel", {
+        width : 500,
+        height : 300,
+        title : '패널',
+        renderTo : Ext.getBody(),
+        layout : 'border',
         items : [{
             xtype : 'panel',
-            title : '상위패널',
-            layout : 'card',
+            border : true,
+            flex : 1,
+            region : 'west',
+            split : true
+        }, {
+            xtype : 'panel',
+            border : true,
+            flex : 2,
+            region : 'center',
+            layout : 'border',
             items : [{
                 xtype : 'panel',
-                title : '첫 번째 하위패널',
-                width : 300,
-                height : 300,
-                x : 300,
-                y : 600,
                 border : true,
+                flex : 1,
+                region : 'center'
             }, {
-                    xtype : 'panel',
-                    width : 300,
-                    height : 300,
-                    x : 150,
-                    y : 300,
-                    border : true,
-                    title : '두 번째 하위패널',
+                xtype : 'panel',
+                border : true,
+                flex : 1,
+                region : 'south',
+                split : true
             }]
         }]
     });
