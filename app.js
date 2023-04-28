@@ -92,36 +92,84 @@ Ext.onReady(function() {
 // });
 
 
+// Ext.onReady(function() {
+//     Ext.create("Ext.panel.Panel", {
+//         width : 500,
+//         height : 300,
+//         title : '패널',
+//         renderTo : Ext.getBody(),
+//         layout : 'border',
+//         items : [{
+//             xtype : 'panel',
+//             border : true,
+//             flex : 1,
+//             region : 'west',
+//             title : '좌측입니다.',
+//             split : true,
+//             html : '<b>안녕하세요.</b>'
+//         }, {
+//             xtype : 'panel',
+//             border : true,
+//             flex : 2,
+//             region : 'center',
+//             layout : 'border',
+//             items : [{
+//                 xtype : 'panel',
+//                 border : true,
+//                 flex : 2,
+//                 region : 'center',
+//                 layout : 'center',
+//                 items : [{
+//                     xtype : 'button',
+//                     text : '버튼',
+//                     // handler : function() {
+//                     //     Ext.Msg.alert('알림', '버튼을 눌렀습니다.');
+//                     // }
+//                     listeners : {
+//                         click : function(btn) {
+//                             alert('알림', '버튼을 눌렀습니다.');
+//                         }
+//                     }
+//                 }]
+//             }, {
+//                 xtype : 'panel',
+//                 border : true,
+//                 flex : 1,
+//                 region : 'south',
+//                 split : true
+//             }]
+//         }]
+//     });
+// });
+
 Ext.onReady(function() {
-    Ext.create("Ext.panel.Panel", {
-        width : 500,
-        height : 300,
-        title : '패널',
-        renderTo : Ext.getBody(),
+    Ext.create("Ext.container.Viewport", {
         layout : 'border',
+        renderTo : Ext.getBody(),
         items : [{
             xtype : 'panel',
-            border : true,
-            flex : 1,
+            width : 150,
+            split : true,
             region : 'west',
-            split : true
+            title : 'explorer'
         }, {
             xtype : 'panel',
-            border : true,
-            flex : 2,
+            flex : 1,
             region : 'center',
+            title : 'test',
+            header : false,
             layout : 'border',
             items : [{
                 xtype : 'panel',
-                border : true,
-                flex : 1,
-                region : 'center'
+                flex : 2,
+                region : 'center',
+                title : 'app'
             }, {
                 xtype : 'panel',
-                border : true,
                 flex : 1,
+                split : true,
                 region : 'south',
-                split : true
+                title : 'servers'
             }]
         }]
     });
