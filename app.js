@@ -142,34 +142,102 @@ Ext.onReady(function() {
 //     });
 // });
 
+// Ext.onReady(function() {
+//     Ext.create("Ext.container.Viewport", {
+//         layout : 'border',
+//         renderTo : Ext.getBody(),
+//         items : [{
+//             xtype : 'panel',
+//             width : 150,
+//             split : true,
+//             region : 'west',
+//             title : 'explorer'
+//         }, {
+//             xtype : 'panel',
+//             flex : 1,
+//             region : 'center',
+//             title : 'test',
+//             header : false,
+//             layout : 'border',
+//             items : [{
+//                 xtype : 'panel',
+//                 flex : 2,
+//                 region : 'center',
+//                 title : 'app'
+//             }, {
+//                 xtype : 'panel',
+//                 flex : 1,
+//                 split : true,
+//                 region : 'south',
+//                 title : 'servers'
+//             }]
+//         }]
+//     });
+// });
+
+
 Ext.onReady(function() {
     Ext.create("Ext.container.Viewport", {
         layout : 'border',
         renderTo : Ext.getBody(),
         items : [{
             xtype : 'panel',
-            width : 150,
-            split : true,
-            region : 'west',
-            title : 'explorer'
-        }, {
-            xtype : 'panel',
-            flex : 1,
-            region : 'center',
-            title : 'test',
+            height : 100,
             header : false,
-            layout : 'border',
+            region : 'north',
             items : [{
-                xtype : 'panel',
-                flex : 2,
-                region : 'center',
-                title : 'app'
+                xtype : 'toolbar',
+                items : [{
+                    xtype : 'button',
+                    text : '버튼1',
+                    menu : [{
+                        text : '새 문서',
+                        iconCls : 'x-fa fa-file'
+                    }, {
+                        text : '메뉴2'
+                    }, {
+                        text : '메뉴3'
+                    }]
+                }, {
+                    xtype : 'button',
+                    text : '버튼2'
+                }, {
+                    xtype : 'button',
+                    text : '버튼3'
+                }, {
+                    xtype : 'segmentedbutton',
+                    items : [{
+                        xtype : 'button',
+                        text : '버튼4'
+                    }, {
+                        xtype : 'button',
+                        text : '버튼5'
+                    }, {
+                        xtype : 'button',
+                        text : '버튼6'
+                    }]
+                }]
             }, {
-                xtype : 'panel',
-                flex : 1,
-                split : true,
-                region : 'south',
-                title : 'servers'
+                xtype : 'toolbar',
+                items : [{
+                    xtype : 'button',
+                    iconCls : 'x-fa fa-plus'
+                }, {
+                    xtype : 'button',
+                    iconCls : 'x-fa fa-minus'
+                }, {
+                    xtype : 'button',
+                    iconCls : 'x-fa fa-play',
+                    scale : 'small'
+                }, {
+                    xtype : 'button',
+                    iconCls : 'x-fa fa-pause',
+                    scale : 'medium'
+                }, {
+                    xtype : 'button',
+                    iconCls : 'x-fa fa-stop',
+                    scale : 'large'
+                }]
             }]
         }]
     });
