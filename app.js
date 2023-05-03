@@ -364,3 +364,116 @@ Ext.onReady(function() {
 // });
 
 
+// Ext.onReady(function() {
+//     Ext.create("Ext.panel.Panel",{
+//         width : 300,
+//         height : 300,
+//         title : 'DataStore',
+//         renderTo : Ext.getBody(),
+//         items : [{
+//             xtype : 'combo',
+//             displayField : 'name',
+//             valueField : 'age',
+//             store : {
+//                 fields : ['name', 'realname'],
+//                 data : [{
+//                     name: '홍',
+//                     age: 'Hong'
+//                 }, {
+//                     name: '김',
+//                     age: 'Kim'
+//                 }, {
+//                     name: '박',
+//                     age: 'Park'
+//                 }]
+//             }
+//         }]
+//     });
+// });
+
+
+// Ext.onReady(function() {
+//     Ext.create("Ext.grid.Panel",{
+//         width : 500,
+//         height : 500,
+//         renderTo : Ext.getBody(),
+//         columns : [{
+//             text : '이름',
+//             dataIndex : 't1',
+//             flex : 1
+//         }, {
+//             text : '나이',
+//             dataIndex : 't2',
+//             flex : 1
+//         }, {
+//             text : '성별',
+//             dataIndex : 't3',
+//             flex : 1
+//         }],
+//         store : {
+//             fields : ['t1', 't2', 't3'],
+//             data : [{
+//                 t1 : 'hong',
+//                 t2 : '20',
+//                 t3 : 'man'
+//             }, {
+//                 t1 : 'kim',
+//                 t2 : '25',
+//                 t3 : 'female'
+//             }, {
+//                 t1 : 'park',
+//                 t2 : '30',
+//                 t3 : 'man'
+//             }]
+//         }
+//     });
+// });
+
+
+Ext.onReady(function() {
+    Ext.create("Ext.panel.Panel",{
+        width : 300,
+        height : 300,
+        renderTo : Ext.getBody(),
+        items : [{
+            xtype : 'combo',
+            displayField : 'key',
+            valueField : 'value',
+            store : {
+                fields : ['key', 'value'],
+                proxy : {
+                    type : 'ajax',
+                    url : '/data/combo.json',
+                    reader : {
+                        type : 'json',
+                        rootProperty : 'data'
+                    }
+                }
+            }
+            }, {
+                xtype : 'grid',
+                columns : [{
+                    text : '컬럼1',
+                    dataIndex : 'column1'
+                }, {
+                    text : '컬럼2',
+                    dataIndex : 'column2'
+                }, {
+                    text : '컬럼3',
+                    dataIndex : 'column3'
+                }],
+                store : {
+                    autoLoad : true,
+                    fields : ['column1', 'column2', 'column3'],
+                    proxy : {
+                        type : 'ajax',
+                        url : '/data/grid.json',
+                        reader : {
+                            type : 'json',
+                            rootProperty : 'data'
+                        }
+                    }
+                }
+        }]
+    });
+});
